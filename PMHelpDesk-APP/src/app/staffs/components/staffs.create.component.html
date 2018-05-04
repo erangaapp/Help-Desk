@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Add New Staff</h2>
+      <form novalidate [formGroup]="modelForm" (ngSubmit)="onSubmit()">
+
+        <fieldset formGroupName="name">
+          <div class="form-group" [ngClass]="{
+                      'has-danger': name.invalid && (name.dirty || name.touched),
+                      'has-success': name.valid && (name.dirty || name.touched)}">
+
+            <label>Name</label>
+            <input type="text" class="form-control" formControlName="name" required>
+            <div class="form-control-feedback" *ngIf="name.errors && (name.dirty || name.touched)">
+
+              <p *ngIf="name.errors.required">Name is required</p>
+
+            </div>
+
+          </div>
+
+        </fieldset>
+
+        <fieldset formGroupName="contact">
+          <div class="form-group" [ngClass]="{
+                      'has-danger': email.invalid && (email.dirty || email.touched),
+                      'has-success': email.valid && (email.dirty || email.touched)}">
+
+            <label>Email</label>
+            <input type="email" class="form-control" formControlName="email">
+            <div class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
+
+              <p *ngIf="email.errors.required">Email is required</p>
+              <p *ngIf="email.errors.pattern">The email address must contain at least the @ character</p>
+
+            </div>
+
+          </div>
+
+          <div class="form-group" [ngClass]="{
+                      'has-danger': phone.invalid && (phone.dirty || phone.touched),
+                      'has-success': phone.valid && (phone.dirty || phone.touched)}">
+
+            <label>Phone</label>
+            <input type="tel" class="form-control" formControlName="phone">
+            <div class="form-control-feedback" *ngIf="phone.errors && (phone.dirty || phone.touched)">
+
+              <p *ngIf="phone.errors.pattern">Please enter a valid phone number</p>
+
+            </div>
+
+          </div>
+
+          <div class="form-group">
+
+            <label>Address</label>
+            <input type="text" class="form-control" formControlName="address">
+
+          </div>
+
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Submit</button>
+
+        <a routerLink="/issuetypes-read" class="card-link"><i class="fa fa-arrow-back"></i> Back To List</a>
+
+      </form>
+    </div>
+  </div>
+</div>

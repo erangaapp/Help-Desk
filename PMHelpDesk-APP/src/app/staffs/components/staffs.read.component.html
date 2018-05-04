@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Staffs</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <a class="pull-right" routerLink="/staffs-create"><i class="fa fa-plus"></i> Add New Record</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+        <input [(ngModel)]="filterQuery" id="search" type="text" class="form-control" placeholder="Search..." aria-label="Search...">
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-lg-3 col-sm-6" *ngFor="let model of models | staffsearchfilter: filterQuery">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title text-center">
+            {{model.name}}
+          </h4>
+          <hr>
+          <h6>Name : {{model.name}}</h6>
+          <h6>Email : {{model.email}}</h6>
+          <h6>Phone : {{model.phone}}</h6>
+          <h6>Address : {{model.address}}</h6>
+          <hr>
+          <a  routerLink="/staffs-edit/{{model.id}}" class="card-link text-success"><i class="fa fa-pencil"></i> Edit</a>
+          <a href="" (click)="delete($event,model.id)" class="card-link text-danger"><i class="fa fa-trash"></i> Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

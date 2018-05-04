@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Edit Issue Type</h2>
+      <form novalidate [formGroup]="modelForm" (ngSubmit)="onSubmit()">
+
+        <fieldset formGroupName="code">
+          <div class="form-group" [ngClass]="{
+                      'has-danger': code.invalid && (code.dirty || code.touched),
+                      'has-success': code.valid && (code.dirty || code.touched)}">
+
+            <label>Code</label>
+            <input type="text" class="form-control" formControlName="code" required>
+            <div class="form-control-feedback" *ngIf="code.errors && (code.dirty || code.touched)">
+
+              <p *ngIf="code.errors.required">First Name is required</p>
+
+            </div>
+            
+          </div>
+
+        </fieldset>
+
+        <fieldset formGroupName="description">
+          <div class="form-group" [ngClass]="{
+                      'has-danger': description.invalid && (description.dirty || description.touched),
+                      'has-success': description.valid && (description.dirty || description.touched)}">
+
+            <label>Description</label>
+            <textarea class="form-control" formControlName="description" required></textarea>
+            <div class="form-control-feedback" *ngIf="description.errors && (description.dirty || description.touched)">
+
+              <p *ngIf="description.errors.required">Description is required</p>
+
+            </div>
+          </div>
+
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Submit</button>
+
+        <a routerLink="/issuetypes-read" class="card-link"><i class="fa fa-arrow-back"></i> Back To List</a>
+
+      </form>
+    </div>
+  </div>
+</div>

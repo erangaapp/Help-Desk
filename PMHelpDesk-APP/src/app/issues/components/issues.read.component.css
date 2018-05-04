@@ -1,0 +1,11 @@
+#search .input-group .form-control:hover {
+    z-index: 0 !important;
+}
+
+#search :hover {
+    z-index: 0 !important;
+}
+
+.input-group .form-control{
+    z-index: 0 !important;
+}

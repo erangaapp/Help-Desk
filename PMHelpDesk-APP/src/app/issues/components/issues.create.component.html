@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Add New Issue</h2>
+      <form novalidate [formGroup]="modelForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group" [ngClass]="{
+                      'has-danger': issueType.invalid && (issueType.dirty || issueType.touched),
+                      'has-success': issueType.valid && (issueType.dirty || issueType.touched)}">
+
+          <label>Issue Type Code</label>
+
+          <kendo-dropdownlist formControlName="issueType" [data]="issueTypes" [defaultItem]="{ code: 'Select Issue Type', id: null, description:'' }"
+            [textField]="'code'" [valueField]="'id'" [valuePrimitive]="true" required>
+
+            <ng-template kendoDropDownListItemTemplate let-dataItem>
+              <span class="template"><strong>{{ dataItem.code }}</strong></span>&nbsp;{{ dataItem.description }}
+            </ng-template>
+
+          </kendo-dropdownlist>
+
+          <div class="form-control-feedback" *ngIf="issueType.errors && (issueType.dirty || issueType.touched)">
+
+            <p *ngIf="issueType.errors.required">Issue Type is required</p>
+
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{
+          'has-danger': user.invalid && (user.dirty || user.touched),
+          'has-success': user.valid && (user.dirty || user.touched)}">
+
+          <label>User</label>
+
+          <kendo-dropdownlist formControlName="user" [data]="users" [defaultItem]="{ firstName: 'Select Issue Type', id: null }"
+            [textField]="'firstName'" [valueField]="'id'" [valuePrimitive]="true" required>
+
+            <ng-template kendoDropDownListItemTemplate let-dataItem>
+              <span class="template">{{ dataItem.firstName }}</span>&nbsp;{{ dataItem.lastName }}
+            </ng-template>
+
+            <ng-template kendoDropDownListValueTemplate let-dataItem>
+              <span class="template">{{ dataItem?.firstName }}</span>&nbsp;{{ dataItem?.lastName }}
+            </ng-template>
+            
+          </kendo-dropdownlist>
+
+          <div class="form-control-feedback" *ngIf="user.errors && (user.dirty || user.touched)">
+
+            <p *ngIf="user.errors.required">User is required</p>
+
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{
+          'has-danger': dateReported.invalid && (dateReported.dirty || dateReported.touched),
+          'has-success': dateReported.valid && (dateReported.dirty || dateReported.touched)}">
+
+          <label>Date Reported</label>
+          <kendo-datepicker [format]="'dd/MM/yyyy'" formControlName="dateReported" required></kendo-datepicker>
+          <div class="form-control-feedback" *ngIf="dateReported.errors && (dateReported.dirty || dateReported.touched)">
+
+            <p *ngIf="dateReported.errors.required">Date Reported required</p>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Date Resolved</label>
+          <kendo-datepicker [format]="'dd/MM/yyyy'" formControlName="dateResolved"></kendo-datepicker>
+        </div>
+
+        <div class="form-group" [ngClass]="{
+                      'has-danger': description.invalid && (description.dirty || description.touched),
+                      'has-success': description.valid && (description.dirty || description.touched)}">
+
+          <label>Description</label>
+          <textarea class="form-control" formControlName="description" required></textarea>
+          <div class="form-control-feedback" *ngIf="description.errors && (description.dirty || description.touched)">
+            <p *ngIf="description.errors.required">Description is required</p>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Submit</button>
+
+        <a routerLink="/issues-read" class="card-link"><i class="fa fa-arrow-back"></i> Back To List</a>
+
+      </form>
+    </div>
+  </div>
+</div>

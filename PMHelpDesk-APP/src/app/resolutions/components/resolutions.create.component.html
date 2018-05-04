@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Add New Resolution</h2>
+      <form novalidate [formGroup]="modelForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group" [ngClass]="{
+          'has-danger': issue.invalid && (issue.dirty || issue.touched),
+          'has-success': issue.valid && (issue.dirty || issue.touched)}">
+
+          <label>Issue</label>
+
+          <kendo-dropdownlist formControlName="issue" [data]="issues" [defaultItem]="{ description: 'Select Issue', id: null }"
+            [textField]="'description'" [valueField]="'id'" [valuePrimitive]="true" required>
+          </kendo-dropdownlist>
+
+          <div class="form-control-feedback" *ngIf="issue.errors && (issue.dirty || issue.touched)">
+
+            <p *ngIf="issue.errors.required">Issue is required</p>
+
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{
+          'has-danger': staff.invalid && (staff.dirty || staff.touched),
+          'has-success': staff.valid && (staff.dirty || staff.touched)}">
+
+          <label>Staff</label>
+
+          <kendo-dropdownlist formControlName="staff" [data]="staffs" [defaultItem]="{ name: 'Select Staff', id: null }"
+            [textField]="'name'" [valueField]="'id'" [valuePrimitive]="true" required>
+          </kendo-dropdownlist>
+
+          <div class="form-control-feedback" *ngIf="staff.errors && (staff.dirty || staff.touched)">
+
+            <p *ngIf="staff.errors.required">Staff is required</p>
+
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{
+                      'has-danger': description.invalid && (description.dirty || description.touched),
+                      'has-success': description.valid && (description.dirty || description.touched)}">
+
+          <label>Description</label>
+          <textarea class="form-control" formControlName="description" required></textarea>
+          <div class="form-control-feedback" *ngIf="description.errors && (description.dirty || description.touched)">
+            <p *ngIf="description.errors.required">Description is required</p>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Submit</button>
+
+        <a routerLink="/resolutions-read" class="card-link"><i class="fa fa-arrow-back"></i> Back To List</a>
+
+      </form>
+    </div>
+  </div>
+</div>

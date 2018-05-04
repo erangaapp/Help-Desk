@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Add New Issue Relationship</h2>
+      <form novalidate [formGroup]="modelForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group" [ngClass]="{
+                      'has-danger': issue.invalid && (issue.dirty || issue.touched),
+                      'has-success': issue.valid && (issue.dirty || issue.touched)}">
+
+          <label>Issue</label>
+
+          <kendo-dropdownlist formControlName="issue" [data]="issues" [defaultItem]="{ description: 'Select Issue', id: null }"
+            [textField]="'description'" [valueField]="'id'" [valuePrimitive]="true" required>
+          </kendo-dropdownlist>
+
+          <div class="form-control-feedback" *ngIf="issue.errors && (issue.dirty || issue.touched)">
+
+            <p *ngIf="issue.errors.required">Issue is required</p>
+
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{
+          'has-danger': relatedIssue.invalid && (relatedIssue.dirty || relatedIssue.touched),
+          'has-success': relatedIssue.valid && (relatedIssue.dirty || relatedIssue.touched)}">
+
+          <label>Related Issue</label>
+
+          <kendo-dropdownlist formControlName="relatedIssue" [data]="relatedIssues" [defaultItem]="{ description: 'Select Related Issue', id: null }"
+            [textField]="'description'" [valueField]="'id'" [valuePrimitive]="true" required>
+          </kendo-dropdownlist>
+
+          <div class="form-control-feedback" *ngIf="relatedIssue.errors && (relatedIssue.dirty || relatedIssue.touched)">
+
+            <p *ngIf="relatedIssue.errors.required">Related Issue is required</p>
+
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="{
+          'has-danger': dateRelated.invalid && (dateRelated.dirty || dateRelated.touched),
+          'has-success': dateRelated.valid && (dateRelated.dirty || dateRelated.touched)}">
+
+          <label>Date Related</label>
+          <kendo-datepicker [format]="'dd/MM/yyyy'" formControlName="dateRelated" required></kendo-datepicker>
+          <div class="form-control-feedback" *ngIf="dateRelated.errors && (dateRelated.dirty || dateRelated.touched)">
+
+            <p *ngIf="dateRelated.errors.required">Date Related required</p>
+
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Submit</button>
+
+        <a routerLink="/issuerelationships-read" class="card-link"><i class="fa fa-arrow-back"></i> Back To List</a>
+
+      </form>
+    </div>
+  </div>
+</div>

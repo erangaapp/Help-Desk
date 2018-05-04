@@ -1,0 +1,11 @@
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Data\bin\Debug\netcoreapp2.0\PMHelpDesk.Data.deps.json
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Data\bin\Debug\netcoreapp2.0\PMHelpDesk.Data.dll
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Data\bin\Debug\netcoreapp2.0\PMHelpDesk.Data.pdb
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Data\bin\Debug\netcoreapp2.0\PMHelpDesk.Models.dll
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Data\bin\Debug\netcoreapp2.0\PMHelpDesk.Models.pdb
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Data\obj\Debug\netcoreapp2.0\PMHelpDesk.Data.csprojResolveAssemblyReference.cache
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Data\obj\Debug\netcoreapp2.0\PMHelpDesk.Data.csproj.CoreCompileInputs.cache
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Data\obj\Debug\netcoreapp2.0\PMHelpDesk.Data.AssemblyInfoInputs.cache
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Data\obj\Debug\netcoreapp2.0\PMHelpDesk.Data.AssemblyInfo.cs
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Data\obj\Debug\netcoreapp2.0\PMHelpDesk.Data.dll
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Data\obj\Debug\netcoreapp2.0\PMHelpDesk.Data.pdb

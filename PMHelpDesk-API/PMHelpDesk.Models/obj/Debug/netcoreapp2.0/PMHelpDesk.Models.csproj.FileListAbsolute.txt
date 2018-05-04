@@ -1,0 +1,9 @@
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Models\bin\Debug\netcoreapp2.0\PMHelpDesk.Models.deps.json
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Models\bin\Debug\netcoreapp2.0\PMHelpDesk.Models.dll
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Models\bin\Debug\netcoreapp2.0\PMHelpDesk.Models.pdb
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Models\obj\Debug\netcoreapp2.0\PMHelpDesk.Models.csproj.CoreCompileInputs.cache
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Models\obj\Debug\netcoreapp2.0\PMHelpDesk.Models.AssemblyInfoInputs.cache
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Models\obj\Debug\netcoreapp2.0\PMHelpDesk.Models.AssemblyInfo.cs
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Models\obj\Debug\netcoreapp2.0\PMHelpDesk.Models.dll
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Models\obj\Debug\netcoreapp2.0\PMHelpDesk.Models.pdb
+D:\Insight\PMHelpDesk\PMHelpDesk-API\PMHelpDesk.Models\obj\Debug\netcoreapp2.0\PMHelpDesk.Models.csprojResolveAssemblyReference.cache

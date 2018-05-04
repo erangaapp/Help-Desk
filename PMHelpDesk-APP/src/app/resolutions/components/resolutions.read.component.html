@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Resolutions</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <a class="pull-right" routerLink="/resolutions-create"><i class="fa fa-plus"></i> Add New Record</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 col-sm-12">
+      <kendo-grid [data]="gridData" [pageSize]="state.take" [skip]="state.skip" [sort]="state.sort" [filter]="state.filter" [sortable]="true"
+        [pageable]="true" filterable="menu" (dataStateChange)="dataStateChange($event)">
+        <kendo-grid-column field="issue" title="Issue" width="150">
+        </kendo-grid-column>
+        <kendo-grid-column field="staff" title="Staff" width="150">
+        </kendo-grid-column>
+        <kendo-grid-column field="description" title="Description" width="250" [sortable]="false"></kendo-grid-column>
+        <kendo-grid-command-column title="" width="180">
+          <ng-template kendoGridCellTemplate let-dataItem>
+            <button (click)="edit(dataItem.id)" class="k-button"><i class="fa fa-pencil"></i>&nbsp;Edit</button>
+            <button (click)="delete(dataItem.id)" class="k-button"><i class="fa fa-trash"></i>&nbsp;Remove</button>
+          </ng-template>
+        </kendo-grid-command-column>
+      </kendo-grid>
+    </div>
+  </div>
+</div>
